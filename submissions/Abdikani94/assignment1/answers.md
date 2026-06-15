@@ -1,4 +1,4 @@
-# Data Science & Machine Learning — Study Notes
+# Data Science & Machine Learning Study Notes
 
 ---
 
@@ -9,7 +9,7 @@
 3. [Supervised vs Unsupervised Learning](#3-supervised-vs-unsupervised-learning)
 4. [Overfitting & Underfitting](#4-overfitting--underfitting)
 5. [Training Data & Test Data](#5-training-data--test-data)
-6. [Case Study — ML in Healthcare](#6-case-study--ml-in-healthcare)
+6. [Case Study  ML in Healthcare](#6-case-study--ml-in-healthcare)
 
 ---
 
@@ -21,7 +21,7 @@ The big field that studies data to find answers and help people make better deci
 > **Analogy:** Data Science is the whole kitchen.
 
 ### Machine Learning
-A branch of Artificial Intelligence that builds algorithms and models that learn patterns from data and make predictions — without being explicitly programmed.
+A branch of Artificial Intelligence that builds algorithms and models that learn patterns from data and make predictions without being explicitly programmed.
 
 > **Analogy:** Machine Learning is one tool inside the kitchen.
 
@@ -32,7 +32,7 @@ A branch of Artificial Intelligence that builds algorithms and models that learn
 | Goal | Understand data, find answers | Learn patterns, make predictions |
 | Uses | Stats, charts, storytelling, ML | Algorithms, models, training data |
 
-### Real-Life Example — Netflix Recommendations
+### Real-Life Example  Netflix Recommendations
 
 | Step | Who Does It | What Happens |
 |---|---|---|
@@ -46,7 +46,7 @@ A branch of Artificial Intelligence that builds algorithms and models that learn
 
 ## 2. Data Science Lifecycle
 
-ML fits in **Step 5** — after the data is clean and explored, before deployment.
+ML fits in **Step 5**  after the data is clean and explored, before deployment.
 
 ```
 1. Define the problem    →  What question are we answering?
@@ -63,7 +63,7 @@ ML fits in **Step 5** — after the data is clean and explored, before deploymen
 - **Before Step 5**  data is messy. ML trained on bad data learns bad patterns.
 - **After Step 5**   a human still needs to evaluate results and push the model live.
 
-> ML is powerful. But it needs humans around it — before and after.
+> ML is powerful. But it needs humans around it  before and after.
 
 ---
 
@@ -103,9 +103,9 @@ No answers given. The computer finds patterns on its own.
 ## 4. Overfitting & Underfitting
 
 ### Overfitting
-Model studies too hard. Memorizes everything — including noise and mistakes.
+Model studies too hard. Memorizes everything including noise and mistakes.
 
-**Example:** Student memorizes 10 exam questions word for word. New exam arrives with different questions. Student fails — knew too much about too little.
+**Example:** Student memorizes 10 exam questions word for word. New exam arrives with different questions. Student fails knew too much about too little.
 
 **Why it happens:**
 - Too much training on too little data
@@ -157,50 +157,49 @@ You have data. You split it in two.
 | Split | Purpose | Analogy |
 |---|---|---|
 | Training data (80%) | Model learns patterns here | Student reads the book |
-| Test data (20%) | Model is evaluated here — never seen before | Surprise exam, book closed |
+| Test data (20%) | Model is evaluated here never seen before | Surprise exam, book closed |
 
 ### Why Split?
 
 If the model trains and tests on the **same data**, it just memorizes. Looks perfect. Means nothing.
 
-Splitting gives you an **honest score** — how well it performs on data it has never seen.
+Splitting gives you an **honest score**  how well it performs on data it has never seen.
 
-> Training data teaches the model. Test data checks if it actually learned — or just memorized.
+> Training data teaches the model. Test data checks if it actually learned  or just memorized.
 
 ---
 
 ## 6. Case Study — ML in Healthcare
 
 **Title:** *A Roadmap to Implementing Machine Learning in Healthcare: From Concept to Practice*
-**Source:** Frontiers in Digital Health, 2025 — PubMed / US National Library of Medicine
+**Source:** Frontiers in Digital Health, 2025  PubMed / US National Library of Medicine
 **Link:** https://pmc.ncbi.nlm.nih.gov/articles/PMC11788154/
 
 ### What They Did
 Researchers at The Hospital for Sick Children (Toronto) launched a program called **PREDICT** in 2023. Goal: build and deploy ML models to help sick children using their hospital records.
 
 ### Real Problem Solved
-Children receiving chemotherapy often suffer severe vomiting — one of the worst side effects of cancer treatment. Doctors frequently miss the best guidelines to prevent it.
+Children receiving chemotherapy often suffer severe vomiting  one of the worst side effects of cancer treatment. Doctors frequently miss the best guidelines to prevent it.
 
 **Solution:** An ML model flags high-risk patients early. Doctors receive an alert and give better anti-nausea medication before vomiting starts.
 
 ### What They Found
-- Built a central data system with patient records in **18 clean tables** — covering diagnoses, medications, lab results, and visit history
+- Built a central data system with patient records in **18 clean tables** covering diagnoses, medications, lab results, and visit history
 - This made it easy to train ML models across many hospital projects
-- Models need ongoing monitoring — patient data changes over time, and old models can quietly get worse
+- Models need ongoing monitoring  patient data changes over time, and old models can quietly get worse
 
 ### Lifecycle Coverage
 
 | Lifecycle Stage | What They Did |
 |---|---|
 | Define problem | Which children are at high risk of vomiting from chemo? |
-| Collect data | Hospital records — medications, lab results, visit history |
+| Collect data | Hospital records  medications, lab results, visit history |
 | Clean data | Built one clean, centralized database |
 | Build model | ML trained on patient records to predict vomiting risk |
-| Evaluate model | Silent trials — results tracked before going live |
+| Evaluate model | Silent trials  results tracked before going live |
 | Deploy | Alerts sent to pharmacists with high-risk patient names |
 | Monitor | Model checked nightly for prediction quality |
 
-> Real hospital. Real children. ML read their records, predicted who would suffer most, and warned doctors early — so kids suffer less.
 
 ---
 
