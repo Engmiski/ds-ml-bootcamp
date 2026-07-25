@@ -155,8 +155,7 @@ npm run dev
 
 **Repository Link:**
 
-https://github.com/nimco-nuur/stocksense-ai/tree/main/final_project_ds-ml-main
-
+https://github.com/nimco-nuur/stocksense-ai
 
 ---
 
