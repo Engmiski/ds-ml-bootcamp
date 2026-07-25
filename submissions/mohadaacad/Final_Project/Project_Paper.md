@@ -8,6 +8,10 @@
 
 **Date:** July 2026
 
+
+Github Link :-
+
+https://github.com/mohadaacad/Student-AI-Tools-vs-Exam-Score-Prediction-API
 ---
 
 # Abstract
