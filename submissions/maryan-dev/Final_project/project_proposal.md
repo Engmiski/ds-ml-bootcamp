@@ -6,12 +6,12 @@
 
 ---
 
-# 2. Project Title and Description
+## 2. Project Title and Description
 
-## Title:
+### Title:
 **AI-Powered Personal Wellness Recommendation System (WellMind AI)**
 
-## Description:
+### Description:
 
 WellMind AI is a machine learning-based personal wellness recommendation system that predicts a user's overall wellness category (Healthy, Average, or Poor) based on their lifestyle behaviors, including sleep patterns, stress levels, and physical activity.
 
@@ -23,11 +23,11 @@ The project will benefit everyday users, students, and employees who want simple
 
 ---
 
-# 3. Problem Type
+## 3. Problem Type
 
 This project will use both supervised and unsupervised machine learning approaches.
 
-## Supervised Learning (Classification)
+### Supervised Learning (Classification)
 
 The primary problem type is **Classification**.
 
@@ -43,7 +43,7 @@ Classes:
 
 The classification model will be used by the `/predict` API to provide personalized wellness recommendations.
 
-## Unsupervised Learning (Clustering)
+### Unsupervised Learning (Clustering)
 
 K-Means clustering will be used as a secondary analysis method to discover hidden lifestyle patterns among users.
 
@@ -58,15 +58,15 @@ These clusters will help improve the understanding of different user behaviors.
 
 ---
 
-# 4. Dataset
+## 4. Dataset
 
-## Dataset Source
+### Dataset Source
 
 Kaggle:
 
 https://www.kaggle.com/datasets/imaginativecoder/sleep-health-data-sampled
 
-## Dataset Size
+### Dataset Size
 
 The dataset contains approximately **15,000 rows** of sleep and lifestyle-related information.
 
@@ -74,9 +74,7 @@ The exact dataset size will be confirmed during Exploratory Data Analysis (EDA) 
 
 This dataset size is suitable for machine learning training, testing, model comparison, and clustering analysis.
 
----
-
-## Target Column
+### Target Column
 
 The target column will be:
 
@@ -92,9 +90,7 @@ The original dataset does not contain this target column. It will be created thr
 
 The target will be generated from a calculated Wellness Score representing the user's overall lifestyle condition.
 
----
-
-## Main Features
+### Main Features
 
 The original dataset features used in this project include:
 
@@ -113,11 +109,11 @@ The original dataset features used in this project include:
 
 ---
 
-# 5. Feature Engineering
+## 5. Feature Engineering
 
 New features will be created from the original dataset features to improve model performance and provide deeper wellness insights.
 
-## Sleep Score
+### Sleep Score
 
 Created using:
 
@@ -126,9 +122,7 @@ Created using:
 
 This represents the overall quality of the user's sleep.
 
----
-
-## Activity Score
+### Activity Score
 
 Created using:
 
@@ -137,9 +131,7 @@ Created using:
 
 This measures the user's physical activity level.
 
----
-
-## Stress Index
+### Stress Index
 
 Created using:
 
@@ -147,9 +139,7 @@ Created using:
 
 This converts stress information into a numerical score for machine learning models.
 
----
-
-## Fatigue Score
+### Fatigue Score
 
 Created using:
 
@@ -159,9 +149,7 @@ Created using:
 
 This estimates the user's fatigue level.
 
----
-
-## Wellness Score
+### Wellness Score
 
 Created using:
 
@@ -172,9 +160,7 @@ Created using:
 
 This represents the user's overall wellness condition.
 
----
-
-## Lifestyle Category (Target)
+### Lifestyle Category (Target)
 
 Created from Wellness Score:
 
@@ -186,33 +172,33 @@ This target will be used for supervised classification.
 
 ---
 
-# 6. Algorithms You Plan to Train
+## 6. Algorithms You Plan to Train
 
-## 1. Logistic Regression
+### 1. Logistic Regression
 
 Used as a baseline classification model because it is simple, interpretable, and suitable for multi-class classification.
 
-## 2. Decision Tree
+### 2. Decision Tree
 
 Used because it can learn non-linear relationships and provide understandable decision rules.
 
-## 3. Random Forest
+### 3. Random Forest
 
 Used because it combines multiple decision trees, reduces overfitting, and usually performs well on structured datasets.
 
-## 4. K-Means Clustering
+### 4. K-Means Clustering
 
 Used for unsupervised learning to discover groups of users with similar lifestyle patterns.
 
-## 5. XGBoost
+### 5. XGBoost
 
 Used as an advanced gradient boosting algorithm because it performs strongly on structured/tabular data.
 
 ---
 
-# 7. Evaluation Plan
+## 7. Evaluation Plan
 
-## Classification Metrics
+### Classification Metrics
 
 The classification models will be evaluated using:
 
@@ -222,7 +208,7 @@ The classification models will be evaluated using:
 - Macro F1 Score
 - Confusion Matrix
 
-## Best Model Selection
+### Best Model Selection
 
 The best classification model will be selected using:
 
@@ -230,7 +216,7 @@ The best classification model will be selected using:
 
 because it provides balanced evaluation across all wellness categories, especially when class sizes are different.
 
-## Clustering Metrics
+### Clustering Metrics
 
 The clustering performance will be evaluated using:
 
@@ -241,18 +227,21 @@ The best clustering configuration will be selected using the highest Silhouette 
 
 ---
 
-# 8. Deployment Sketch
+## 8. Deployment Sketch
 
-## Framework
+### Framework
 
 The backend API will be developed using:
 
 **FastAPI**
 
-## Endpoint
-POST /predict
+### Endpoint
 
-## Input JSON
+```
+POST /predict
+```
+
+### Input JSON
 
 ```json
 {
@@ -265,7 +254,11 @@ POST /predict
   "physical_activity_level": "Low",
   "daily_steps": 3000
 }
-Output JSON
+```
+
+### Output JSON
+
+```json
 {
   "prediction": "Poor Lifestyle",
   "wellness_score": 45,
@@ -277,11 +270,13 @@ Output JSON
   "confidence": 0.91,
   "cluster_label": 2
 }
-```json
+```
+
+---
 
 ## 9. Repository Plan
 
-```json
+```
 wellmind-ai/
 │
 ├── dataset/
@@ -312,8 +307,9 @@ wellmind-ai/
 ├── README.md
 │
 └── project_paper.md
-```json
+```
 
+---
 
 ## Expected Outcome
 
