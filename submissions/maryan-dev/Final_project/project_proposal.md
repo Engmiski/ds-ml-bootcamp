@@ -277,7 +277,7 @@ Output JSON
   "confidence": 0.91,
   "cluster_label": 2
 }
-# 9. Repository Plan
+## 9. Repository Plan
 
 ```text
 wellmind-ai/
@@ -312,7 +312,7 @@ wellmind-ai/
 └── project_paper.md
 
 
-Expected Outcome
+## Expected Outcome
 
 The final system will provide users with personalized wellness recommendations using machine learning techniques.
 
