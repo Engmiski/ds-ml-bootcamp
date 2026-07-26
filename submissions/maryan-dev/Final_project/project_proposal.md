@@ -8,52 +8,53 @@
 
 # 2. Project Title and Description
 
-## Project Title
+## Title:
+**AI-Powered Personal Wellness Recommendation System (WellMind AI)**
 
-**AI-Powered Personal Wellness Recommendation System Using Machine Learning**
+## Description:
 
-## Application Name
+WellMind AI is a machine learning-based personal wellness recommendation system that predicts a user's overall wellness category (Healthy, Average, or Poor) based on their lifestyle behaviors, including sleep patterns, stress levels, and physical activity.
 
-**WellMind AI**
+Many people experience problems such as poor sleep, high stress, and low physical activity without understanding how these factors combine to affect their overall wellness. Most existing wellness applications provide general advice instead of personalized recommendations based on an individual's own lifestyle data.
 
-## Description
+This project aims to solve this problem by using machine learning techniques to analyze lifestyle information and provide personalized recommendations. The system will help users understand their habits, identify possible lifestyle issues, and receive AI-generated suggestions for improving sleep, reducing stress, and maintaining healthier routines.
 
-WellMind AI is an AI-powered personal wellness recommendation system that uses machine learning to analyze lifestyle and health-related behaviors and provide personalized recommendations.
-
-Many people experience problems such as poor sleep quality, high stress levels, low physical activity, and unhealthy daily habits without understanding their impact on overall wellness. This project aims to solve this problem by using machine learning techniques to analyze user information and generate personalized wellness recommendations.
-
-The system considers factors such as sleep patterns, stress levels, physical activity, occupation, caffeine intake, water consumption, screen time, and lifestyle behaviors. Based on these factors, WellMind AI predicts the user's wellness category and provides recommendations such as improving sleep habits, increasing physical activity, managing stress, and maintaining healthy routines.
-
-The target users are students, employees, and individuals who want to understand their lifestyle patterns and improve their daily wellness using artificial intelligence.
+The project will benefit everyday users, students, and employees who want simple, data-driven wellness guidance instead of one-size-fits-all advice.
 
 ---
 
 # 3. Problem Type
 
-This project uses both supervised and unsupervised machine learning approaches.
+This project will use both supervised and unsupervised machine learning approaches.
 
 ## Supervised Learning (Classification)
 
-The main problem type is classification.
+The primary problem type is **Classification**.
 
-The model will predict the user's wellness category:
+The model will predict the user's:
 
-- Healthy Lifestyle
-- Average Lifestyle
-- Poor Lifestyle
+**Lifestyle Category**
 
-The prediction will be used to generate personalized recommendations.
+Classes:
+
+- Healthy
+- Average
+- Poor
+
+The classification model will be used by the `/predict` API to provide personalized wellness recommendations.
 
 ## Unsupervised Learning (Clustering)
 
-K-Means clustering will be used to discover hidden lifestyle patterns among users.
+K-Means clustering will be used as a secondary analysis method to discover hidden lifestyle patterns among users.
 
-The system will identify groups such as:
+Examples of discovered groups:
 
 - Healthy Lifestyle Users
 - Sleep-Deprived Users
 - High Stress Users
 - Low Activity Users
+
+These clusters will help improve the understanding of different user behaviors.
 
 ---
 
@@ -63,11 +64,17 @@ The system will identify groups such as:
 
 Kaggle:
 
-[Sleep and Lifestyle Health Dataset](Kaggle Dataset Link)
+https://www.kaggle.com/datasets/imaginativecoder/sleep-health-data-sampled
 
 ## Dataset Size
 
-The dataset contains more than **2,000 rows**, which is suitable for machine learning training, testing, and clustering analysis.
+The dataset contains approximately **15,000 rows** of sleep and lifestyle-related information.
+
+The exact dataset size will be confirmed during Exploratory Data Analysis (EDA) using `df.shape`.
+
+This dataset size is suitable for machine learning training, testing, model comparison, and clustering analysis.
+
+---
 
 ## Target Column
 
@@ -75,95 +82,107 @@ The target column will be:
 
 **Lifestyle Category**
 
-The target represents the overall wellness condition of the user:
+Classes:
 
 - Healthy
 - Average
 - Poor
 
-This target will be created through feature engineering based on sleep, stress, physical activity, and lifestyle factors.
+The original dataset does not contain this target column. It will be created through feature engineering using sleep, activity, and stress-related information.
+
+The target will be generated from a calculated Wellness Score representing the user's overall lifestyle condition.
 
 ---
 
-# Main Features
+## Main Features
+
+The original dataset features used in this project include:
 
 | Feature | Description |
 |---|---|
 | Age | User age |
 | Gender | User gender |
-| Occupation | User work type |
-| Sleep Duration | Number of sleeping hours |
-| Sleep Quality | Quality of sleep |
+| Occupation | User job type |
+| Sleep Duration | Number of hours slept |
+| Quality of Sleep | Sleep quality level |
 | Physical Activity Level | Daily activity level |
 | Stress Level | Stress intensity |
 | BMI Category | Body weight category |
 | Daily Steps | Number of daily steps |
-| Screen Time | Daily device usage time |
-| Water Intake | Daily water consumption |
-| Caffeine Intake | Daily caffeine consumption |
-| Time of Day | Morning, Afternoon, Evening, Night |
+| Sleep Disorder | Sleep-related problems |
 
 ---
 
 # 5. Feature Engineering
 
-New features will be created to improve machine learning performance.
+New features will be created from the original dataset features to improve model performance and provide deeper wellness insights.
 
 ## Sleep Score
 
-Calculates sleep quality based on:
+Created using:
 
 - Sleep Duration
-- Sleep Quality
+- Quality of Sleep
 
-## Fatigue Score
+This represents the overall quality of the user's sleep.
 
-Measures tiredness using:
-
-- Sleep Score
-- Stress Level
-- Physical Activity
+---
 
 ## Activity Score
 
-Measures physical activity using:
+Created using:
 
-- Daily Steps
 - Physical Activity Level
+- Daily Steps
+
+This measures the user's physical activity level.
+
+---
 
 ## Stress Index
 
-Converts stress levels into numerical values for machine learning.
+Created using:
 
-## Caffeine Balance
+- Stress Level
 
-Analyzes caffeine consumption and its relationship with sleep and stress.
+This converts stress information into a numerical score for machine learning models.
+
+---
+
+## Fatigue Score
+
+Created using:
+
+- Sleep Score
+- Stress Index
+- Activity Score
+
+This estimates the user's fatigue level.
+
+---
 
 ## Wellness Score
 
-Combines:
+Created using:
 
 - Sleep Score
 - Activity Score
 - Stress Index
-- Hydration Level
-- Lifestyle factors
+- Fatigue Score
 
-## Productivity Index
+This represents the user's overall wellness condition.
 
-Measures productivity based on:
+---
 
-- Sleep
-- Stress
-- Activity Level
+## Lifestyle Category (Target)
 
-## Lifestyle Category
-
-Generated classes:
+Created from Wellness Score:
 
 - Healthy
 - Average
 - Poor
+
+This target will be used for supervised classification.
 
 ---
 
@@ -171,23 +190,23 @@ Generated classes:
 
 ## 1. Logistic Regression
 
-Used as a baseline classification model because it is simple, interpretable, and suitable for multi-class prediction.
+Used as a baseline classification model because it is simple, interpretable, and suitable for multi-class classification.
 
 ## 2. Decision Tree
 
-Used because it can learn non-linear patterns and provide understandable decision rules.
+Used because it can learn non-linear relationships and provide understandable decision rules.
 
 ## 3. Random Forest
 
-Used because it combines multiple decision trees and improves prediction accuracy while reducing overfitting.
+Used because it combines multiple decision trees, reduces overfitting, and usually performs well on structured datasets.
 
-## 4. XGBoost
+## 4. K-Means Clustering
 
-Used because it is a powerful boosting algorithm that performs well on structured datasets.
+Used for unsupervised learning to discover groups of users with similar lifestyle patterns.
 
-## 5. K-Means Clustering
+## 5. XGBoost
 
-Used for unsupervised learning to identify different lifestyle groups without predefined labels.
+Used as an advanced gradient boosting algorithm because it performs strongly on structured/tabular data.
 
 ---
 
@@ -203,51 +222,60 @@ The classification models will be evaluated using:
 - Macro F1 Score
 - Confusion Matrix
 
+## Best Model Selection
+
+The best classification model will be selected using:
+
+**Macro F1 Score**
+
+because it provides balanced evaluation across all wellness categories, especially when class sizes are different.
+
 ## Clustering Metrics
 
-The clustering models will be evaluated using:
+The clustering performance will be evaluated using:
 
 - Silhouette Score
 - Davies-Bouldin Index
 
-## Best Model Selection
-
-The best classification model will be selected using **Macro F1 Score** because it provides balanced performance across all wellness categories.
-
-For clustering, the best model will be selected using the highest **Silhouette Score**.
+The best clustering configuration will be selected using the highest Silhouette Score.
 
 ---
 
 # 8. Deployment Sketch
 
-The backend will be developed using **FastAPI**.
+## Framework
 
-## API Endpoint
+The backend API will be developed using:
 
-## Input Example
+**FastAPI**
+
+## Endpoint
+POST /predict
+
+## Input JSON
 
 ```json
 {
   "age": 25,
   "gender": "Female",
-  "sleep_hours": 5,
-  "sleep_quality": 6,
-  "stress_level": "High",
-  "activity_level": "Low",
-  "daily_steps": 3000,
-  "caffeine_intake": 2,
-  "water_intake": 1000
+  "occupation": "Student",
+  "sleep_duration": 5,
+  "sleep_quality": 4,
+  "stress_level": 8,
+  "physical_activity_level": "Low",
+  "daily_steps": 3000
 }
-Output Example
+Output JSON
 {
   "prediction": "Poor Lifestyle",
-  "wellness_score": 55,
+  "wellness_score": 45,
   "recommendations": [
     "Improve sleep duration",
-    "Increase physical activity",
-    "Reduce stress"
+    "Reduce stress level",
+    "Increase physical activity"
   ],
-  "confidence": 0.91
+  "confidence": 0.91,
+  "cluster_label": 2
 }
 # 9. Repository Plan
 wellmind-ai/
@@ -269,23 +297,24 @@ wellmind-ai/
 │   ├── train.py
 │   └── evaluate.py
 
-├── models/
-│   └── best_model.pkl
-
 ├── api/
 │   └── app.py
+
+├── models/
+│   └── best_model.pkl
 
 ├── frontend/
 
 ├── README.md
 
-└── requirements.txt
+└── project_paper.md
 
+Expected Outcome
 
-# Expected Outcome
+The final system will provide users with personalized wellness recommendations using machine learning techniques.
 
-The final system will provide users with personalized wellness recommendations using machine learning techniques. The system will analyze lifestyle factors such as sleep patterns, stress levels, physical activity, caffeine intake, hydration, and daily habits to predict the user's wellness category and generate suitable recommendations.
+The system will analyze lifestyle factors such as sleep patterns, stress levels, physical activity, and daily habits to predict the user's wellness category and generate suitable recommendations.
 
-The project will compare multiple machine learning models to identify the best-performing model for wellness prediction. Additionally, clustering techniques will be used to discover hidden lifestyle patterns and group users based on similar wellness behaviors.
+Multiple machine learning models will be trained and compared to identify the best-performing model for wellness prediction. Additionally, clustering techniques will be used to discover hidden lifestyle patterns and group users based on similar behaviors.
 
-The WellMind AI application will present predictions, wellness scores, user lifestyle groups, and personalized recommendations through an interactive dashboard. This system aims to help users better understand their daily habits, improve their lifestyle choices, and make informed wellness decisions using artificial intelligence.
+The WellMind AI application will present predictions, wellness scores, lifestyle groups, and personalized recommendations through an interactive dashboard. The system aims to help users better understand their daily habits, improve their lifestyle choices, and make informed wellness decisions using artificial intelligence.
