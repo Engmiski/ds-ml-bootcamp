@@ -277,9 +277,11 @@ Output JSON
   "confidence": 0.91,
   "cluster_label": 2
 }
+```json
+
 ## 9. Repository Plan
 
-```text
+```json
 wellmind-ai/
 │
 ├── dataset/
@@ -310,6 +312,7 @@ wellmind-ai/
 ├── README.md
 │
 └── project_paper.md
+```json
 
 
 ## Expected Outcome
