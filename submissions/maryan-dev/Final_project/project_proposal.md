@@ -278,36 +278,39 @@ Output JSON
   "cluster_label": 2
 }
 # 9. Repository Plan
-wellmind-ai/
 
+```text
+wellmind-ai/
+│
 ├── dataset/
 │   ├── raw/
 │   └── processed/
-
+│
 ├── notebooks/
 │   ├── 01_eda.ipynb
 │   ├── 02_preprocessing.ipynb
 │   ├── 03_feature_engineering.ipynb
 │   ├── 04_model_training.ipynb
 │   └── 05_clustering.ipynb
-
+│
 ├── src/
 │   ├── preprocess.py
 │   ├── feature_engineering.py
 │   ├── train.py
 │   └── evaluate.py
-
+│
 ├── api/
 │   └── app.py
-
+│
 ├── models/
 │   └── best_model.pkl
-
+│
 ├── frontend/
-
+│
 ├── README.md
-
+│
 └── project_paper.md
+
 
 Expected Outcome
 
