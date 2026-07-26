@@ -1,11 +1,6 @@
-# Project Proposal
+# Final Project Proposal
 
-
-**Date:** July 2026
-
----
-
-# 1. Certificate Name
+## 1. Certificate Name
 
 **Maryan Mohamed Adam**
 
@@ -13,168 +8,284 @@
 
 # 2. Project Title and Description
 
-## Title
+## Project Title
 
-**Machine Learning-Based Problematic Internet Use Prediction and User Behavior Clustering**
+**AI-Powered Personal Wellness Recommendation System Using Machine Learning**
 
-Problematic Internet Use (PIU) has become an increasing concern among children and adolescents because excessive internet use can negatively affect mental health, sleep quality, physical activity, and academic performance. This project aims to build a machine learning model that predicts the severity of problematic internet use using demographic, behavioral, and psychological assessment data. In addition to prediction, clustering techniques will be used to discover hidden groups of users with similar internet usage behaviors. The final deliverable will be a REST API that accepts user information as JSON and returns the predicted PIU severity with a confidence score.
+## Application Name
+
+**WellMind AI**
+
+## Description
+
+WellMind AI is an AI-powered personal wellness recommendation system that uses machine learning to analyze lifestyle and health-related behaviors and provide personalized recommendations.
+
+Many people experience problems such as poor sleep quality, high stress levels, low physical activity, and unhealthy daily habits without understanding their impact on overall wellness. This project aims to solve this problem by using machine learning techniques to analyze user information and generate personalized wellness recommendations.
+
+The system considers factors such as sleep patterns, stress levels, physical activity, occupation, caffeine intake, water consumption, screen time, and lifestyle behaviors. Based on these factors, WellMind AI predicts the user's wellness category and provides recommendations such as improving sleep habits, increasing physical activity, managing stress, and maintaining healthy routines.
+
+The target users are students, employees, and individuals who want to understand their lifestyle patterns and improve their daily wellness using artificial intelligence.
 
 ---
 
 # 3. Problem Type
 
-This project combines both **Classification** and **Clustering**.
+This project uses both supervised and unsupervised machine learning approaches.
 
-## Classification (Supervised Learning)
+## Supervised Learning (Classification)
 
-The target column is **`sii`**, which represents the severity of Problematic Internet Use with four classes:
+The main problem type is classification.
 
-* None
-* Mild
-* Moderate
-* Severe
+The model will predict the user's wellness category:
 
-## Clustering (Unsupervised Learning)
+- Healthy Lifestyle
+- Average Lifestyle
+- Poor Lifestyle
 
-Clustering will be used to identify hidden groups of children with similar internet usage behaviors without using the target label.
+The prediction will be used to generate personalized recommendations.
+
+## Unsupervised Learning (Clustering)
+
+K-Means clustering will be used to discover hidden lifestyle patterns among users.
+
+The system will identify groups such as:
+
+- Healthy Lifestyle Users
+- Sleep-Deprived Users
+- High Stress Users
+- Low Activity Users
 
 ---
 
 # 4. Dataset
 
-* **Source:** Kaggle – Child Mind Institute: Problematic Internet Use
+## Dataset Source
 
-  https://www.kaggle.com/datasets/akirahoimancheng/child-mind-institute-problematic-internet-use
+Kaggle:
 
-* **Dataset Size:** Approximately **3,960 training records** with more than **80 features**.
+[Sleep and Lifestyle Health Dataset](Kaggle Dataset Link)
 
-* **Target Column:** `sii` – Severity level of Problematic Internet Use.
+## Dataset Size
 
-* **Main Features**
+The dataset contains more than **2,000 rows**, which is suitable for machine learning training, testing, and clustering analysis.
 
-  * Age
-  * Sex
-  * BMI
-  * Sleep Duration
-  * Physical Activity
-  * Screen Time
-  * Internet Usage
-  * CGAS Score
-  * PCIAT Assessment Scores
+## Target Column
 
-## Preprocessing Plan
+The target column will be:
 
-* Handle missing values using appropriate imputation techniques.
-* Remove unnecessary columns.
-* Encode categorical variables.
-* Scale numerical features.
+**Lifestyle Category**
+
+The target represents the overall wellness condition of the user:
+
+- Healthy
+- Average
+- Poor
+
+This target will be created through feature engineering based on sleep, stress, physical activity, and lifestyle factors.
 
 ---
 
-# Algorithms I Plan to Train
+# Main Features
 
-| # | Algorithm                     | Type         | Why it fits                                                                         |
-| - | ----------------------------- | ------------ | ----------------------------------------------------------------------------------- |
-| 1 | **Logistic Regression**       | Supervised   | A simple and interpretable baseline model for multiclass classification.            |
-| 2 | **K-Nearest Neighbors (KNN)** | Supervised   | A distance-based algorithm that classifies samples using their nearest neighbors.   |
-| 3 | **Decision Tree**             | Supervised   | Captures nonlinear relationships and produces easy-to-understand decision rules.    |
-| 4 | **Random Forest**             | Supervised   | Improves prediction accuracy, reduces overfitting, and provides feature importance. |
-| 5 | **XGBoost**                   | Supervised   | A powerful boosting algorithm that performs well on structured tabular datasets.    |
-| 6 | **K-Means Clustering**        | Unsupervised | Discovers hidden groups of users with similar internet usage behaviors.             |
-| 7 | **Hierarchical Clustering**   | Unsupervised | Provides an alternative clustering approach for comparing user segments.            |
-
-The project will compare multiple supervised learning algorithms to identify the best classification model for predicting Problematic Internet Use (PIU). In addition, two unsupervised learning algorithms will be used to discover hidden behavioral groups and compare clustering performance.
+| Feature | Description |
+|---|---|
+| Age | User age |
+| Gender | User gender |
+| Occupation | User work type |
+| Sleep Duration | Number of sleeping hours |
+| Sleep Quality | Quality of sleep |
+| Physical Activity Level | Daily activity level |
+| Stress Level | Stress intensity |
+| BMI Category | Body weight category |
+| Daily Steps | Number of daily steps |
+| Screen Time | Daily device usage time |
+| Water Intake | Daily water consumption |
+| Caffeine Intake | Daily caffeine consumption |
+| Time of Day | Morning, Afternoon, Evening, Night |
 
 ---
 
-# 6. Evaluation Plan
+# 5. Feature Engineering
+
+New features will be created to improve machine learning performance.
+
+## Sleep Score
+
+Calculates sleep quality based on:
+
+- Sleep Duration
+- Sleep Quality
+
+## Fatigue Score
+
+Measures tiredness using:
+
+- Sleep Score
+- Stress Level
+- Physical Activity
+
+## Activity Score
+
+Measures physical activity using:
+
+- Daily Steps
+- Physical Activity Level
+
+## Stress Index
+
+Converts stress levels into numerical values for machine learning.
+
+## Caffeine Balance
+
+Analyzes caffeine consumption and its relationship with sleep and stress.
+
+## Wellness Score
+
+Combines:
+
+- Sleep Score
+- Activity Score
+- Stress Index
+- Hydration Level
+- Lifestyle factors
+
+## Productivity Index
+
+Measures productivity based on:
+
+- Sleep
+- Stress
+- Activity Level
+
+## Lifestyle Category
+
+Generated classes:
+
+- Healthy
+- Average
+- Poor
+
+---
+
+# 6. Algorithms You Plan to Train
+
+## 1. Logistic Regression
+
+Used as a baseline classification model because it is simple, interpretable, and suitable for multi-class prediction.
+
+## 2. Decision Tree
+
+Used because it can learn non-linear patterns and provide understandable decision rules.
+
+## 3. Random Forest
+
+Used because it combines multiple decision trees and improves prediction accuracy while reducing overfitting.
+
+## 4. XGBoost
+
+Used because it is a powerful boosting algorithm that performs well on structured datasets.
+
+## 5. K-Means Clustering
+
+Used for unsupervised learning to identify different lifestyle groups without predefined labels.
+
+---
+
+# 7. Evaluation Plan
 
 ## Classification Metrics
 
-* Accuracy
-* Precision
-* Recall
-* F1-Score
-* Confusion Matrix
+The classification models will be evaluated using:
 
-The best classification model will be selected using the **F1-Score** because the dataset contains multiple target classes with an imbalanced distribution.
+- Accuracy
+- Precision
+- Recall
+- Macro F1 Score
+- Confusion Matrix
 
 ## Clustering Metrics
 
-* Silhouette Score
-* Davies–Bouldin Index
+The clustering models will be evaluated using:
 
-The best clustering model will be selected using the highest **Silhouette Score** and the lowest **Davies–Bouldin Index**.
+- Silhouette Score
+- Davies-Bouldin Index
 
----
+## Best Model Selection
 
-# 7. Deployment Sketch
+The best classification model will be selected using **Macro F1 Score** because it provides balanced performance across all wellness categories.
 
-* **Framework:** FastAPI
-* **Endpoint:** `POST /predict`
-
-## Input JSON Example
-
-```json
-{
-  "Age": 13,
-  "Sex": "Male",
-  "BMI": 20.8,
-  "Sleep_Duration": 8,
-  "Physical_Activity": 4,
-  "Screen_Time": 5,
-  "Internet_Usage": 6,
-  "CGAS_Score": 72
-}
-```
-
-## Output JSON Example
-
-```json
-{
-  "prediction": "Moderate",
-  "probability": 0.91
-}
-```
-
-The API will load the trained model from `models/best_model.pkl`, apply the same preprocessing pipeline used during training, and return the predicted PIU severity with its confidence score.
+For clustering, the best model will be selected using the highest **Silhouette Score**.
 
 ---
 
-# 8. Repository Plan
+# 8. Deployment Sketch
 
-```text
-child-mind-piu-prediction/
+The backend will be developed using **FastAPI**.
+
+## API Endpoint
+
+## Input Example
+
+```json
+{
+  "age": 25,
+  "gender": "Female",
+  "sleep_hours": 5,
+  "sleep_quality": 6,
+  "stress_level": "High",
+  "activity_level": "Low",
+  "daily_steps": 3000,
+  "caffeine_intake": 2,
+  "water_intake": 1000
+}
+Output Example
+{
+  "prediction": "Poor Lifestyle",
+  "wellness_score": 55,
+  "recommendations": [
+    "Improve sleep duration",
+    "Increase physical activity",
+    "Reduce stress"
+  ],
+  "confidence": 0.91
+}
+# 9. Repository Plan
+wellmind-ai/
+
 ├── dataset/
 │   ├── raw/
 │   └── processed/
+
 ├── notebooks/
 │   ├── 01_eda.ipynb
 │   ├── 02_preprocessing.ipynb
-│   ├── 03_supervised.ipynb
-│   └── 04_unsupervised.ipynb
+│   ├── 03_feature_engineering.ipynb
+│   ├── 04_model_training.ipynb
+│   └── 05_clustering.ipynb
+
 ├── src/
 │   ├── preprocess.py
+│   ├── feature_engineering.py
 │   ├── train.py
-│   ├── evaluate.py
-│   └── clustering.py
+│   └── evaluate.py
+
+├── models/
+│   └── best_model.pkl
+
 ├── api/
 │   └── app.py
-├── models/
-│   ├── best_model.pkl
-│   └── scaler.pkl
+
+├── frontend/
+
 ├── README.md
-├── requirements.txt
-└── project_paper.md
-```
 
-## Planned Commands
+└── requirements.txt
 
-```bash
-python src/train.py
 
-uvicorn api.app:app --reload
-```
+# Expected Outcome
 
----
+The final system will provide users with personalized wellness recommendations using machine learning techniques. The system will analyze lifestyle factors such as sleep patterns, stress levels, physical activity, caffeine intake, hydration, and daily habits to predict the user's wellness category and generate suitable recommendations.
 
+The project will compare multiple machine learning models to identify the best-performing model for wellness prediction. Additionally, clustering techniques will be used to discover hidden lifestyle patterns and group users based on similar wellness behaviors.
+
+The WellMind AI application will present predictions, wellness scores, user lifestyle groups, and personalized recommendations through an interactive dashboard. This system aims to help users better understand their daily habits, improve their lifestyle choices, and make informed wellness decisions using artificial intelligence.
