@@ -1,7 +1,5 @@
 # Assignment 2 – Data Foundations for Machine Learning
 
-**Due:** Saturday, June 20, 2026 — 12:00 PM (Africa/Mogadishu / EAT)
-
 **Goal:** Apply the foundations from Lessons 1–3 by collecting your own dataset and documenting it. You should connect what Data Science is and where it fits, the type of Machine Learning problem your data suits — supervised vs. unsupervised, and the data foundations themselves — features, labels, dataset structure, and quality issues to be handled through preprocessing.
 
 ## Task

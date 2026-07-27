@@ -1,7 +1,5 @@
 # Assignment 5 – Classification — Theory and Practice
 
-**Due:** Sunday, July 5, 2026 — 12:00 PM (Africa/Mogadishu / EAT)
-
 **Goal:** Demonstrate understanding of classification concepts in Machine Learning. Reproduce the **Lesson 5** preprocessing and modeling pipeline in Jupyter notebooks, then research and implement **one additional classifier** — for a total of three models (Logistic Regression, Random Forest, and your chosen algorithm) on the loan approval dataset.
 
 ---

@@ -1,7 +1,5 @@
 # Assignment 4 – Regression — Theory and Practice
 
-**Due:** Tuesday, June 30, 2026 — 12:00 PM (Africa/Mogadishu / EAT)
-
 **Goal:** Demonstrate understanding of regression concepts in Machine Learning and apply them by building and comparing Linear Regression and Random Forest models for car price prediction using the dataset you cleaned in Assignment 3.
 
 ---
