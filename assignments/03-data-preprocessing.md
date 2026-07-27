@@ -1,4 +1,4 @@
-# Practical Assignment: Data Preprocessing Pipeline
+# Assignment 3 – Data Preprocessing Pipeline
 
 **Due:** Wednesday, June 24, 2026 — 12:00 PM (Africa/Mogadishu / EAT)
 

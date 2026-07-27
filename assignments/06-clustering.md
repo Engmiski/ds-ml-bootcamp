@@ -1,4 +1,4 @@
-# Assignment Six: Clustering — Theory and Practice
+# Assignment 6 – Clustering — Theory and Practice
 
 **Due:** Thursday, July 9, 2026 — 12:00 PM (Africa/Mogadishu / EAT)
 

@@ -1,4 +1,4 @@
-# Practical Assignment: Data Foundations for Machine Learning
+# Assignment 2 – Data Foundations for Machine Learning
 
 **Due:** Saturday, June 20, 2026 — 12:00 PM (Africa/Mogadishu / EAT)
 
