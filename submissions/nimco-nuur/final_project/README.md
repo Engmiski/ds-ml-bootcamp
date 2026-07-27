@@ -155,8 +155,7 @@ npm run dev
 
 **Repository Link:**
 
-https://github.com/nimco-nuur/stocksense-ai
-
+https://github.com/nimco-nuur/stocksense-ai/tree/main
 ---
 
 ## Developer
