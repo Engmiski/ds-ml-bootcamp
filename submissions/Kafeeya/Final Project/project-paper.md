@@ -63,7 +63,7 @@ After selecting XGBoost as the best-performing model, feature importance analysi
 
 The analysis showed that not all features contributed equally to the prediction. Some variables had a much stronger impact than others.
 
-![Feature Importance](C:\Users\KCT\ds-ml-bootcamp\submissions\Kafeeya\Final Project\Images\photo_2026-07-27_11-44-50.jpg)
+![Feature Importance](Images/photo_2026-07-27_11-44-50.jpg)
 
 ## Top Important Features
 
