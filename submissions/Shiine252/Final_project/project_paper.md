@@ -240,4 +240,4 @@ This project taught me that deployment is an important part of the machine learn
 
 # my deploymen link= [shiine252-ai-impact-on-jobs-layoff-risk-predictor-app-v25ayj.streamlit.app](https://shiine252-ai-impact-on-jobs-layoff-risk-predictor-app-v25ayj.streamlit.app/)
 
-my repo link =
+# my repo link =[github.com/Shiine252/AI-Impact-on-Jobs-Layoff-Risk-Predictor](https://github.com/Shiine252/AI-Impact-on-Jobs-Layoff-Risk-Predictor)
