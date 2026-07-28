@@ -1,4 +1,5 @@
 # Gym Members Churn Prediction Using Machine Learning
+https://github.com/Kafeeya/gym-customer-churn-prediction
 
 # 1. Problem Statement and Motivation
 
